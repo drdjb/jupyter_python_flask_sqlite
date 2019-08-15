@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Delete shares</title>  
+</head>  
+<body>  
+    <h3>Remove a share from the list</h3>  
+    <form action="/deleterecord" method="post">  
+        Share Id <input type="text" name="id">  
+        <input type="submit" value="Submit">  
+    </form>  
+    
+    <table border=5>  
+    <thead>  
+        <td>ID</td>  
+        <td>Asset</td>  
+        <td>Order Date</td>  
+        <td>Amount</td>  
+        <td>Price</td>
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["id"]}}</td>  
+            <td>{{row["asset"]}}</td>  
+            <td>{{row["order_date"]}}</td>  
+            <td>{{row["amount"]}}</td>  
+            <td>{{row["price"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+</body>  
+</html>  
